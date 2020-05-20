@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/gosuri/uiprogress"
+	"github.com/textileio/uiprogress"
 )
 
 func main() {

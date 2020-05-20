@@ -6,8 +6,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/gosuri/uiprogress"
-	"github.com/gosuri/uiprogress/util/strutil"
+	"github.com/textileio/uiprogress"
+	"github.com/textileio/uiprogress/util/strutil"
 )
 
 var steps = []string{
