@@ -59,6 +59,9 @@ type Bar struct {
 	// Width is the width of the progress bar
 	Width int
 
+	// Final replaces bar content when complete if set
+	Final string
+
 	// timeElased is the time elapsed for the progress
 	timeElapsed time.Duration
 	current     int
@@ -180,6 +183,10 @@ func (b *Bar) PrependElapsed() *Bar {
 
 // Bytes returns the byte presentation of the progress bar
 func (b *Bar) Bytes() []byte {
+	if b.Final != "" && b.current == b.Total {
+		return []byte(b.Final)
+	}
+
 	completedWidth := int(float64(b.Width) * (b.CompletedPercent() / 100.00))
 
 	// add fill and empty bits
